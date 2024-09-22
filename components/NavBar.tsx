@@ -1,17 +1,19 @@
+"use client";
+
 import Container from "./Container";
 import Logo from "./Logo";
-import Profile from "./Profile";
+import ProfileMenu from "./ProfileMenu";
 import Search from "./Search";
 
 const NavBar = () => {
   return (
     <>
-      <nav className="border fixed w-full z-50 bg-white md:py-4 py-1">
+      <nav className="border fixed w-full z-10 bg-white md:py-4 py-2">
         <Container>
-          <div className="flex justify-between items-center">
+          <div className="flex gap-3 justify-between items-center">
           <Logo />
           <Search />
-          <Profile />
+          <ProfileMenu />
           </div>
         </Container>
       </nav>
