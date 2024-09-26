@@ -4,7 +4,7 @@ import { IoMenuOutline } from "react-icons/io5";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
-import { open } from "@/features/modelSlice";
+import { open, close } from "@/hooks/modelSlice";
 import { useDispatch } from "react-redux";
 
 const ProfileMenu = () => {
