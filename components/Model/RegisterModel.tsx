@@ -7,6 +7,9 @@ import Heading from "../Heading";
 import Input from "../Input";
 import { useForm } from 'react-hook-form';
 import Button from "../Button";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+
 
 interface FormData {
    username: string;
@@ -54,7 +57,9 @@ const RegisterModel = () => {
             />
             {errors.password && <span className="text-red-500">{errors.password.message}</span>}
 
-            <Button full value="Registor" extra="mt-4"/>
+            <Button full fill value="Registor" extra="mt-4"/>
+            <Button full border icon={<FcGoogle />} value="Continue with Google" extra="mt-4" />
+            <Button full border icon={<FaGithub />} value="Continue with Github" extra="mt-4" />
           </form>
         </Model>
       )}
