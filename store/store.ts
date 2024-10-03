@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import modelSlice from "@/hooks/modelSlice";
+import registorModelSlice from "@/hooks/registorModelSlice";
+import signInModelSlice from "@/hooks/signInModelSlice";
 
 const store = configureStore({
-    reducer : {
-        model : modelSlice
-    }
+  reducer: {
+    registorModel: registorModelSlice,
+    signInModel : signInModelSlice
+  },
 });
 
 export default store;

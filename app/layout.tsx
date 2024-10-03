@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import "./globals.css";
 import ReduxProvider from "@/components/ReduxProvider"; // Import the new client component
 import RegisterModel from "@/components/Model/RegisterModel";
+import SignInModel from "@/components/Model/SignInModel";
 
 const font = Nunito({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={font.className}>
         <ReduxProvider>
           <RegisterModel /> 
+          <SignInModel />
           <NavBar />
           {children}
         </ReduxProvider>
