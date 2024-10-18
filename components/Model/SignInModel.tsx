@@ -36,9 +36,7 @@ const SignInModel = () => {
         // Handle sign-in error
         console.error("Sign-in error:", result.error);
       } else {
-        // Successful sign-in
-        console.log("Sign-in successful:", result);
-        router.push("/"); // Manually redirect if needed
+        router.refresh(); 
         dispatch(closeSignInModel());
       }
     } catch (error) {

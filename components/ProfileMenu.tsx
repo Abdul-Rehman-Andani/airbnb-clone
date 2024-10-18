@@ -7,9 +7,13 @@ import MenuItem from "./MenuItem";
 import { openRegistorModel } from "@/hooks/registorModelSlice";
 import { openSignInModel } from "@/hooks/signInModelSlice";
 import { useDispatch } from "react-redux";
+import { signOut } from "next-auth/react";
 
-const ProfileMenu = () => {
+interface Props {
+  currentUser?: any;
+}
 
+const ProfileMenu: React.FC<Props> = ({ currentUser }: Props) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,8 +38,22 @@ const ProfileMenu = () => {
       </div>
       {isOpen && (
         <div className="bg-white absolute w-[200px] rounded-md shadow-md md:right-20 right-3 top-20">
-          <MenuItem label="Sign up" onClick={() => dispatch(openRegistorModel())}/>
-          <MenuItem label="Sign in" onClick={() => dispatch(openSignInModel())} />
+          {currentUser ? (
+            <>
+              <MenuItem label="Sign out" onClick={() => {signOut()}} />
+            </>
+          ) : (
+            <>
+              <MenuItem
+                label="Sign up"
+                onClick={() => dispatch(openRegistorModel())}
+              />
+              <MenuItem
+                label="Sign in"
+                onClick={() => dispatch(openSignInModel())}
+              />
+            </>
+          )}
         </div>
       )}
     </>

@@ -7,6 +7,7 @@ interface Props {
   border?: boolean;
   extra?: string;
   icon?: ReactNode;
+  onClick? : () => void
 }
 
 const Button: React.FC<Props> = ({
@@ -16,10 +17,12 @@ const Button: React.FC<Props> = ({
   extra,
   border,
   icon,
+  onClick
 }: Props) => {
   return (
     <>
       <button
+      onClick={onClick}
         className={`flex items-center justify-center gap-5 ${
           full && `w-full`
         } ${extra} ${fill && `bg-primary text-white`}  ${

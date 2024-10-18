@@ -10,6 +10,7 @@ import Button from "../Button";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import axios from "axios";
+import { signIn } from "next-auth/react";
 
 interface FormData {
   name: string;
@@ -67,7 +68,9 @@ const RegisterModel = () => {
             )}
 
             <Button full fill value="Registor" extra="mt-4" />
-            <Button
+            
+          </form>
+          <Button
               full
               border
               icon={<FcGoogle />}
@@ -80,8 +83,8 @@ const RegisterModel = () => {
               icon={<FaGithub />}
               value="Continue with Github"
               extra="mt-4"
+              onClick={() => signIn("github")}
             />
-          </form>
         </Model>
       )}
     </>
